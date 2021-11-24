@@ -9,4 +9,4 @@ check-list for testing a basket on Rozetka website:
 7.Automatic calculation of the entire order
 8.Ability to order
 9.The elements reacting to the pressing also react to the cursor pointing.
-10.Additional block «Together Cheaper»
+10.Additional block "Together Cheaper"
