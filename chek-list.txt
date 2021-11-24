@@ -1,0 +1,12 @@
+check-list for testing a basket on Rozetka website:
+
+1.Displays previously added products
+2.Ability to increase number of items
+3.Ability to reduce number of items
+4.Ability to return to a product card by clicking on it
+5.Correct position of the basket (centered)
+6.The button «Continue Shopping» is present
+7.Automatic calculation of the entire order
+8.Ability to order
+9.The elements reacting to the pressing also react to the cursor pointing.
+10.Additional block «Together Cheaper»
