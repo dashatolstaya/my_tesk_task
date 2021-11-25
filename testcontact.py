@@ -30,7 +30,7 @@ def test_contact():
         EC.presence_of_element_located((By.CLASS_NAME, "cart-product__title")))
 
         # Assert
-        assert head.text == basket_head.text, "Product present in the basket"
+        assert head.text == basket_head.text, "Product is present in the basket"
         
     finally:
         time.sleep(5)
