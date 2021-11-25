@@ -1,6 +1,7 @@
 import pytest
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -16,17 +17,21 @@ def test_contact():
         browser.get(link)
 
         # Act
-        browser.implicitly_wait(5)   
         product= browser.find_element_by_class_name("tile")
         product.click()
-
-        browser.implicitly_wait(5) 
-        button = browser.find_element_by_tag_name("app-buy-button")
+        
+        head = WebDriverWait(browser, 5).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "product__title")))
+    
+        button = WebDriverWait(browser, 10).until(EC.visibility_of_element_located((By.TAG_NAME,"app-buy-button")))
         button.click()
 
+        basket_head = WebDriverWait(browser, 5).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "cart-product__title")))
+
         # Assert
-        # Write your asserts here
-        assert 1
+        assert head.text == basket_head.text, "Product present in the basket"
+        
     finally:
-        time.sleep(10)
+        time.sleep(5)
         browser.quit()
